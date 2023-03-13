@@ -152,6 +152,7 @@ public class Dispatcher extends Stopable {
 
 	public void onPublish(PublishMsg msg) {
 
+
 		Logger.log("onPublish:" + msg.toString());
 
 		// TODO: publish the message to clients subscribed to the topic

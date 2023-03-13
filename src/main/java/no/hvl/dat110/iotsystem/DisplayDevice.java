@@ -23,6 +23,18 @@ public class DisplayDevice {
 		// - receive messages on the topic
 		// - unsubscribe from the topic
 		// - disconnect from the broker
+
+		Client client = new Client("display", Common.BROKERHOST, Common.BROKERPORT);
+		client.connect();
+		client.createTopic(Common.TEMPTOPIC);
+		client.subscribe(Common.TEMPTOPIC);
+		int i = 0;
+		while(i < COUNT){
+			System.out.println("Dispaying: " + client.receive());
+			i++;
+		}
+
+		client.disconnect();
 		
 		// TODO - END
 		

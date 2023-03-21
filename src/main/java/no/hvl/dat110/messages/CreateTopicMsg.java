@@ -3,15 +3,18 @@ package no.hvl.dat110.messages;
 public class CreateTopicMsg extends Message {
 
     private String topic;
-    private String user;
 
 	// message sent from client to create topic on the broker
 
-    public CreateTopicMsg(String user, String topic) {
 
+
+    public CreateTopicMsg(String user, String topic) {
+        super(MessageType.CREATETOPIC, user);
+        this.topic = topic;
     }
 
-	// TODO: 
+
+    
 	// Implement object variables - a topic is required
 	
 	// Complete the constructor, get/set-methods, and toString method
@@ -24,16 +27,6 @@ public class CreateTopicMsg extends Message {
     public void setTopic(String topic) {
         this.topic = topic;
     }
-
-    @Override
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
 
     @Override
     public String toString() {
